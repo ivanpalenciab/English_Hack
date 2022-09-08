@@ -1,0 +1,16 @@
+.bg-login-image{
+    background: url("../img/bg-login.png");
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.sizeDiv{
+    width: 40px;
+}
+#form-login{
+    background-position: right; 
+    background: black;
+}
+
+

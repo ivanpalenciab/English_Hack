@@ -1,0 +1,8 @@
+beans\UserLesson.class
+beans\Lesson.class
+beans\User.class
+controller\IUserController.class
+controller\UserController.class
+test\DBOperations.class
+servlets\ServletUserLogin.class
+connection\DBConnection.class
