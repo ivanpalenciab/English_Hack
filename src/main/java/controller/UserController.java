@@ -12,10 +12,11 @@ public class UserController implements IUserController {
     public String login(String username, String password){
         Gson gson = new Gson();
         DBConnection connection = new DBConnection();
-        String sql = "SELECT * FROM users WHERE username='"+username+"'and password '"+password+"'";
+        String sql = "SELECT * FROM user WHERE username='"+username+"'and password ='"+password+"'";
         try {
             Statement st = connection.getConnection().createStatement();
             ResultSet rs = st.executeQuery(sql);
+            
             while(rs.next()){
                 String name = rs.getString("name");
                 String lastname = rs.getString("lastname");

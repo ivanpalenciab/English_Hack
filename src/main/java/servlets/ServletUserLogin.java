@@ -29,7 +29,7 @@ public class ServletUserLogin extends HttpServlet {
         
         String result = user.login(username, password);
         
-        response.setContentType("text-html;charset = UTF-8");
+        response.setContentType("text-html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         out.println(result);
         out.flush();
@@ -43,10 +43,5 @@ public class ServletUserLogin extends HttpServlet {
         doGet(request, response);
     }
 
-   
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
 
 }

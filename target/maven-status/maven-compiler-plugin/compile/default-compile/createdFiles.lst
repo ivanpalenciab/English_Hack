@@ -1,5 +1,6 @@
 beans\UserLesson.class
 beans\Lesson.class
+test\LoginTest.class
 beans\User.class
 controller\IUserController.class
 controller\UserController.class
