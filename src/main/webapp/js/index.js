@@ -23,7 +23,6 @@ function autenticarUsuario(){
                $("#login-error").addClass("d-none");
                let username = parsedResult['username'];
                document.location.href="home.html?username="+username;
-               console.log("mas o menos bien");
            }
            else{
               $("#login-error").removeClass("d-none"); 
