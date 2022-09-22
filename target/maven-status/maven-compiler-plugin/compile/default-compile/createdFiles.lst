@@ -4,6 +4,7 @@ test\LoginTest.class
 beans\User.class
 controller\IUserController.class
 controller\UserController.class
+servlets\ServletUserSignUp.class
 test\DBOperations.class
 servlets\ServletUserLogin.class
 connection\DBConnection.class

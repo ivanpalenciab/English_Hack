@@ -34,4 +34,28 @@ public class UserController implements IUserController {
       
     }
     
+        @Override
+    public String signup(String username,String password,String name,String lastname,String email){
+        Gson gson = new Gson();
+        DBConnection con = new DBConnection();
+        String sql = "INSERT INTO user VALUES ('"+username+"', '"+password+"', '"+name+"', '"+lastname+"', '"+email+"')";
+        try {
+            Statement st = con.getConnection().createStatement();
+             st.executeUpdate(sql);
+
+                
+                User user = new User( username, name,lastname, password, email);
+                st.close();
+                return gson.toJson(user);
+                
+            
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        finally {
+            con.desconectar();
+        }
+        return "false";       
+    }
+    
 }
