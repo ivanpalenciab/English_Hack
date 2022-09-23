@@ -57,5 +57,31 @@ public class UserController implements IUserController {
         }
         return "false";       
     }
+     @Override
+    public String get(String username){
+        Gson gson = new Gson();
+        DBConnection con = new DBConnection();
+        String sql = "SELECT * FROM user WHERE username='"+username+"'";
+        try {
+            Statement st = con.getConnection().createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while (rs.next()){
+                String password =rs.getString("password");
+                String name =rs.getString("name");
+                String lastname =rs.getString("lastname");
+                String email =rs.getString("email");
+                
+                User user = new User( username, name,lastname, password, email);
+                return gson.toJson(user);
+                
+            }
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        finally {
+            con.desconectar();
+        }
+        return "false";       
+    }
     
 }

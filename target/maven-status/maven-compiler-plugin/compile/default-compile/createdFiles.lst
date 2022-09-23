@@ -2,7 +2,9 @@ beans\UserLesson.class
 beans\Lesson.class
 test\LoginTest.class
 beans\User.class
+test\GetUserTest.class
 controller\IUserController.class
+servlets\ServletGetUser.class
 controller\UserController.class
 servlets\ServletUserSignUp.class
 test\DBOperations.class
