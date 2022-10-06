@@ -9,21 +9,13 @@ public class UserLesson {
     private boolean finished;
     private double grade;
 
-    public UserLesson(int id, String username, int lesson_id, boolean finished, double grade) {
-        this.id = id;
+    public UserLesson( String username, int lesson_id, boolean finished, double grade) {
         this.username = username;
         this.lesson_id = lesson_id;
         this.finished = finished;
         this.grade = grade;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getUsername() {
         return username;

@@ -16,35 +16,51 @@
         <script src="js/index.js"></script>
     </head>
     <body>      
-        <div class="container">
-            <div class="card-my-5">
-                <div class="card-body">
-                    <div class="row m-3">
-                        <img class="col-md-6 bg-login-image" ></img>
-                        <div class="col-md-6">
-                            <h1 class="h4 text-gray-900 my-3">Welcome</h1>
-                            <form id="form-login"> 
-                                <div>
-                                    <input type="text" class="form-control" id="user" placeholder="Username" required>
-                                </div> <br>
-                                <div>
-                                    <input type="password" class="form-control" id="password" placeholder="password" required>
-                                </div> <br>
-                                <button type="submit" class="btn btn-primary btn-block" id="btn-entrar"> Get In</button>
-                                <hr>
-                            </form>
+        <section class="vh-100">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-6 text-black">
+
+                        <div class="px-5 ms-xl-4" id="logo-container">
+                            <i class="fas fa-crow fa-2x me-3 pt-5 mt-xl-4" style="color: #709085;"></i>
+                            <img src="img/logo.png">
+                            
                         </div>
-                    </div>
-                    <a href="register.html">Don't you have an account? Sign Up</a>
-                    <div id="login-error" class="alert alert-danger d-none" role="alert">
-                        User or password wrong
-                    </div>
 
+                        <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
 
+                            <form style="width: 23rem;"  id="form-login">
+
+                                <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Log in</h3>
+
+                                <div class="form-outline mb-4">
+                                    <input type="text" id="user" class="form-control form-control-lg" />
+                                    <label class="form-label" for="form2Example18">Email address</label>
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <input type="password" id="password" class="form-control form-control-lg" />
+                                    <label class="form-label" for="form2Example28">Password</label>
+                                </div>
+
+                                <div class="pt-1 mb-4">
+                                    <button class="btn btn-info btn-lg btn-block" type="submit" id="btn-entrar">Login</button>
+                                </div>
+
+                                <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">Forgot password?</a></p>
+                                <p>Don't have an account? <a href="register.html" class="link-info">Register here</a></p>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+                    <div class="col-sm-6 px-0 d-none d-sm-block">
+                        <img src=https://www.thestar.com/content/dam/thestar/life/travel/2022/07/08/an-insiders-guide-to-london-england-where-to-find-inspiring-art-cool-shops-and-classic-sunday-roast/london_england_credit_tomas_marek_istock.jpg
+                             alt="Login image" class="w-100 vh-100" style="object-fit: cover; object-position: left;">
+                    </div>
                 </div>
-
             </div>
-
-        </div>
+        </section>
     </body>
 </html>

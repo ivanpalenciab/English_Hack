@@ -7,16 +7,17 @@ import java.sql.DriverManager;
 
 public class DBConnection {
     Connection connection;
-    static String bd = "english_hack";
-    static String port = "3306";
+    static String bd = "railway";
+    static String port = "6542";
     static String login = "root";
-    static String password = "admin";
+    static String password = "aXcxQLTLlT2TiSf8ZSVu";
+    static String ip = "containers-us-west-63.railway.app";
 
     public DBConnection(){
         try {
             Class.forName("com.mysql.jdbc.Driver");
 
-            String url = "jdbc:mysql://localhost:"+this.port+"/"+this.bd;
+            String url = "jdbc:mysql://"+this.ip+":"+this.port+"/"+this.bd;
             connection = DriverManager.getConnection(url,this.login,this.password);
             System.out.println("conexion");
             if (connection == null){
@@ -33,7 +34,7 @@ public class DBConnection {
         return connection;
     }
     
-    public void desconectar(){
+    public void disconnect(){
         connection = null;
     }
 }

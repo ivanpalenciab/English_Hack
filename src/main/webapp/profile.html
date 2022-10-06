@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>My profile</title>
+        <link rel="shortcut icon" href="./img/logo.ico" type="image/x-icon">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="js/profile.js"></script>
+        <link rel="stylesheet" href="css/main.css" />
+    </head>
+    <body>
+        <header class="contain-fluid" style="background-color: blue;">
+            <nav class="navbar navbar-expand-lg  ">
+                <div class="container-fluid">
+                    <a class="navbar-brand"  href="#" style="color: white;"  >English Hack</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#" style="color: white;"  >Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="my-profil-btn" class="nav-link" href="#" style="color: white;">Profile</a>
+
+                            </li>
+                            <li class="nav-item">
+                                <a id="logout-btn" class="nav-link" href="index.html" style="color: white;">Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+
+        </header>
+
+        <main class="p-4 d-flex flex-column align-items-center">
+            <h1 id="profile-title">My profile</h1>
+            <div id="uder-profile">
+                <h3> user</h3> <p id ="user-profile"></p>
+                <h3> name</h3> <p id ="name-profile">###</p>
+                <h3> email</h3> <p id ="email-profile">###</p>
+            </div>
+
+            <table class="table d-none" id="historial-table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Título</th>
+                        <th scope="col">Género</th>
+                        <th scope="col">Estreno</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Devolver</th>
+                    </tr>
+                </thead>
+                <tbody id="historial-tbody">
+                </tbody>
+            </table>
+
+            <h1 class="mt-3">Editar perfil</h1>
+
+            <div class="card" id="form-container">
+                <div class="card-body">
+                    <form method="GET" id="form-update" class="pb-4">
+                        <div class="form-group">
+                            <label for="input-username">Username</label>
+                            <input type="text" class="form-control disabled" id="input-username" placeholder="Username" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="input-contrasena">password</label>
+                            <input type="password" class="form-control" id="input-contrasena" placeholder="Contraseña" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="input-nombre">Name</label>
+                            <input type="text" class="form-control" id="input-nombre" placeholder="Nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="input-apellidos">lastname</label>
+                            <input type="text" class="form-control" id="input-apellidos" placeholder="Apellidos" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="input-email">Email</label>
+                            <input type="text" class="form-control" id="input-email" placeholder="Email" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary" id="modificar-btn">Save data</button>
+                    </form>
+                    <div class="alert alert-danger d-none" id="modificar-error" role="alert">
+                        something wrong, we can't update
+                    </div>
+                    <div id="modificar-exito" class="alert alert-success d-none" role="alert">
+                        update succesed
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mt-4">
+                <button class="btn btn-danger" id="eliminar-cuenta-btn" data-toggle="modal" 
+                        data-target="#eliminar-cuenta-modal">Eliminar cuenta</button>
+            </div>
+            <div class="modal fade" id="eliminar-cuenta-modal" tabindex="-1" role="dialog" 
+                 aria-labelledby="eliminar-cuenta-modal-label" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-tittle" id="eliminar-cuenta-modal-header">¿Eliminar cuenta?</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Eliminar una cuenta es una acción que no se puede restaurar. ¿Está seguro?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" 
+                                    data-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-danger" 
+                                    id="aceptar-eliminar-cuenta-btn">Eliminar cuenta</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+        <footer class="py-3 my-4">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Profile</a></li>
+                <li class="nav-item"><a href="https://ivanpalenciab.github.io/" class="nav-link px-2 text-muted">Creator</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+            </ul>
+            <p class="text-center text-muted">&copy; 2022 English Hack, Inc</p>
+        </footer>
+
+    </body>
+</html>
+
+

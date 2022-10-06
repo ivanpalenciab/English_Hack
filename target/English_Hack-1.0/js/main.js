@@ -1,5 +1,6 @@
-//var username = new URL(location.href).searchParams.get(username);
-var username = "lina";
+var url = location.href
+var username = new URL(url).searchParams.get('username');
+
 var user;
 
 $(document).ready(function () {
@@ -22,7 +23,7 @@ async function getUser(){
             let parsedResult = JSON.parse(result);
             if (parsedResult != false) {
                user = parsedResult;
-               console.log(user);
+               console.log(username);
             } else {
                 console.log("Something was wrong, We can't get user info");
                 
